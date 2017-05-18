@@ -1,0 +1,48 @@
+//agregas un lugar nuevo
+db.locations.save({
+name: 'Centro Civico',
+address: 'Blvd. de la Sta. Cruz 166, Acatlan, Naucalpan, Mex',
+rating: 2,
+facilities: ['fut 8'],
+coords: [-99.2431059, 19.4892637],
+openingTimes:[{
+  days: 'Miercoles',
+  opening: '5:00pm',
+  closing: '10:00pm',
+  closed: false
+  }]
+})
+
+
+
+//agregas reviews a algun lugar
+db.locations.update({
+name: 'Tecnologico de Monterrey Campus Santa Fe'
+}, {
+  $push: {
+    reviews:{
+      author: 'Pablo de la Mora',
+      id: ObjectId(),
+      rating: 5,
+      timestamp: new Date("May 18, 2017"),
+      reviewText: "Excelente nivel de futbol y muy buenos campos"
+    }
+  }
+})
+
+
+
+
+mongodb://heroku_kcf08sc9:822mlouumn9g7s1i04f902n4mg@ds127531.mlab.com:27531/heroku_kcf08sc9
+
+
+username: heroku_kcf08sc9
+password: 822mlouumn9g7s1i04f902n4mg
+Server Address: ds127531.mlab.com
+Port: 27531
+Database Name: heroku_kcf08sc9
+
+mongorestore -h ds127531.mlab.com:27531 -d heroku_kcf08sc9 -u heroku_kcf08sc9 -p 822mlouumn9g7s1i04f902n4mg C:\tmp\mongodump\buscaFut
+
+
+mongo ds127531.mlab.com:27531/heroku_kcf08sc9 -u heroku_kcf08sc9 -p 822mlouumn9g7s1i04f902n4mg
