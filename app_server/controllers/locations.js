@@ -4,7 +4,7 @@ var apiOptions = {
  server : "http://localhost:3000"
 };
 if (process.env.NODE_ENV === 'production') {
- apiOptions.server = "https://protected-inlet-65821.herokuapp.com/";
+ apiOptions.server = "https://protected-inlet-65821.herokuapp.com";
 }
 
 var _isNumeric = function (n) {
