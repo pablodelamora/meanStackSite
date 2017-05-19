@@ -3,7 +3,8 @@ require('./locations');
 
 var dbURI = 'mongodb://localhost/buscaFut';
 if (process.env.NODE_ENV === 'production') {
-  dbURI = process.env.MONGOLAB_URI;
+  //dbURI = process.env.MONGOLAB_URI;
+    dbURI = 'mongodb://heroku_kcf08sc9:822mlouumn9g7s1i04f902n4mg@ds127531.mlab.com:27531/heroku_kcf08sc9';
 }
 mongoose.connect(dbURI);
 
